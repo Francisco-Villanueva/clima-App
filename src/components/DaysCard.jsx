@@ -3,28 +3,28 @@ import { Simulate } from 'react-dom/test-utils'
 import './daysCard.css'
 export default function DaysCard({data}) {
 
-  console.log('DATA = ', data)
+  // console.log('DATA = ', data)
 
   const dd= new Date(data.date)
 
 
   const getWeekDay=(num)=>{
     switch (num){
-      case '0':{return 'Dom'}
-      case '1':{return 'Lun'}
-      case '2':{return 'Mar'}
-      case '4':{return 'Jue'}
-      case '3':{return 'Mie'}
-      case '5':{return 'Vie'}
-      case '6':{return 'Sab'}
+      case '0':{return 'Lun'}
+      case '1':{return 'Mar'}
+      case '2':{return 'Mie'}
+      case '3':{return 'Jue'}
+      case '4':{return 'Vie'}
+      case '5':{return 'Sab'}
+      case '6':{return 'Dom'}
 
       default:break;
     }
   }
 
-  const dia =  getWeekDay( dd.getDay().toString())
+  const dia =  getWeekDay( dd.getDay(1).toString())
   
-  console.log('DIA: ', dia)
+  console.log('DIA: ', dd.getDay().toString() , ' ', data.date)
   return (
     <div className='dayCard-container'>
       <b>{dia}</b>
